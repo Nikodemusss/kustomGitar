@@ -1,0 +1,160 @@
+.canvas{
+  touch-action: none;
+}
+
+body{
+  margin: 0px;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(239, 234, 225);
+}
+
+.configurator-section{
+overflow-y:scroll;
+position: fixed;
+text-transform: uppercase;
+font-weight: bold;
+padding: 5px;
+right: 40px;
+width: 320px;
+height: 240px;
+bottom: 320px;
+border: solid rgb(0, 0, 0);
+background-color: white;
+color: black;
+text-align: center;
+-webkit-user-select: none; /* Safari */
+-ms-user-select: none; /* IE 10 and IE 11 */
+user-select: none; /* Standard syntax */
+}
+
+.configurator-type{
+  font-weight: bold;
+  text-transform: uppercase;
+  position: fixed;
+  padding: 10px;
+  right: 42px;
+  width: auto;
+  bottom: 600px;
+  border: solid rgb(0, 0, 0);
+  background-color: white;
+  color: black;
+  text-align: center;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.select-type{
+  font-weight: bold;
+  width: auto;
+  margin-left: 5px;
+  padding: 8px;
+  background-color: rgb(99, 99, 113);
+  color: white;
+  border-radius: 5px;
+}
+
+.select-type:hover{
+  cursor: pointer;
+  opacity: 5;
+  background-color: rgb(32, 32, 36);
+}
+
+.select-type:active{
+  background-color: rgb(32, 32, 36);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s;
+}
+
+.configurator-title-tuner, .configurator-title-fret, .configurator-title-body, .configurator-title-bridge, .configurator-title-fretBoard{
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  color: black;
+  text-align: left;
+}
+
+.configurator-label{
+  display:flex;
+  flex-direction: row;
+  gap: 32px;
+  align-items: center;
+  padding: 8px;
+}
+
+.item-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  border: solid 2px #999999;
+}
+
+.item.item--active .item-dot {
+  border: solid 2px blue;
+}
+
+.item-label {
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  color: #aaa;
+  text-transform: capitalize;
+}
+
+.item.item--active .item-label {
+  color: blue;
+}
+
+.configurator-fret, .configurator-body, .configurator-bridge, .configurator-fretBoard{
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.configurator-image{
+  bottom: 50px;
+  position: fixed;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 5px;
+  right: 40px;
+  width: auto;
+  height: 240px;
+  border: solid rgb(0, 0, 0);
+  background-color: white;
+  color: black;
+  text-align: center;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.canvas-value{
+  border: solid black 2px;
+  margin: 5px;
+  height: 150px;
+  width: 450px;
+  /* background-image: url(../public/transparant.jpg); */
+}
+
+.button-canvas{
+  text-align: left;
+  margin-left: 10px;
+  
+}
+
+.title{
+  position: fixed;
+  left: 10px;
+  color: black;
+}
