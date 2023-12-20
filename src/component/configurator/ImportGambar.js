@@ -57,17 +57,11 @@ const ImportGambar = () => {
   const removeAll = () => {
     setTunerTxt("./plain.jpg");
     setNeckTxt("./plain.jpg");
-
     setNutTxt("./plain.jpg");
-
     setFretTxt("./plain.jpg");
-
     setFretBoardTxt("./plain.jpg");
-
     setBodyTxt("./plain.jpg");
-
     setBridgeTxt("./plain.jpg");
-
     setBridgeNutTxt("./plain.jpg");
   };
 
@@ -237,7 +231,7 @@ const ImportGambar = () => {
             </button>
           )}
         </div>
-        <button className="image-removeall" onClick={removeAll}>
+        <button className="image-removeall" onClick={() => removeAll()}>
           Remove All
         </button>
       </div>

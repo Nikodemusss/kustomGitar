@@ -3,10 +3,10 @@ import { Canvas } from "@react-three/fiber";
 import Akustik from "../gitar/Akustik";
 import Elektrik from "../gitar/Elektrik";
 import { OrbitControls, Stage } from "@react-three/drei";
-import Scene from "./Download";
 import Info from "../detail/Info";
 import ImportGambar from "./ImportGambar";
 import Material from "./Material";
+import Export from "./Export";
 
 const TipeGitar = () => {
   const [selectedModel, setSelectedModel] = useState(null);
@@ -23,7 +23,7 @@ const TipeGitar = () => {
           {selectedModel === ".public/Akustik.glb" && <Akustik />}
           {selectedModel === ".public/Elektrik.glb" && <Elektrik />}
           <OrbitControls />
-          <Scene />
+          {selectedModel !== null && <Export />}
         </Stage>
       </Canvas>
       <div className="header">

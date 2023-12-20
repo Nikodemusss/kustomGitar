@@ -10,7 +10,7 @@ import { UseTexture } from "../context/TextureContext";
 import { TextureLoader } from "three";
 
 export function Elektrik(props) {
-  const { nodes, materials } = useGLTF("/Elektrik.glb");
+  const { nodes } = useGLTF("/Elektrik.glb");
   const ColorContext = UseCustomization();
   const { Tuner, Neck, Nut, Fret, FretBoard, Body, Bridge, BridgeNut } =
     ColorContext;
@@ -22,6 +22,7 @@ export function Elektrik(props) {
   const neck = useRef();
   const tuner = useRef();
   const fretboard = useRef();
+  const materials = useRef();
   const {
     TunerTxt,
     FretTxt,
@@ -161,7 +162,7 @@ export function Elektrik(props) {
         position={[-0.232, -1.676, 0.331]}
         rotation={[-Math.PI / 2, 1.369, Math.PI]}
       >
-        <meshStandardMaterial {...props} color={Nut.color} ref={nut} />
+        <meshStandardMaterial {...props} color={Nut.color} ref={nut} />{" "}
       </mesh>
       <mesh
         geometry={nodes.BridgeNut.geometry}
@@ -180,11 +181,11 @@ export function Elektrik(props) {
         material={nodes.Neck.material}
         position={[-0.033, -0.487, 0.178]}
       >
-        <meshStandardMaterial {...props} color={Neck.color} ref={neck} />
+        <meshStandardMaterial {...props} color={Neck.color} ref={neck} />{" "}
       </mesh>
       <mesh
         geometry={nodes.FretBoard.geometry}
-        material={nodes.FretBoard.material}
+        material={materials.FretBoard}
         position={[0.191, -0.266, -0.037]}
       >
         <meshStandardMaterial
@@ -210,7 +211,7 @@ export function Elektrik(props) {
       </mesh>
       <mesh
         geometry={nodes.Body.geometry}
-        material={nodes.Body.material}
+        material={materials.Body}
         position={[0.043, -1.318, 0.288]}
         rotation={[Math.PI / 2, 0, 0]}
       >
@@ -219,6 +220,5 @@ export function Elektrik(props) {
     </group>
   );
 }
-
 export default Elektrik;
 useGLTF.preload("/Elektrik.glb");
