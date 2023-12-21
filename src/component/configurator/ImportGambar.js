@@ -65,7 +65,6 @@ const ImportGambar = () => {
     setBridgeNutTxt("./plain.jpg");
   };
 
-  console.log(TunerTxt);
   return (
     <div className="configurator-image">
       <h3>Import Gambar</h3>
