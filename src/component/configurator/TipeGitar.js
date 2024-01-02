@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import Akustik from "../gitar/Akustik";
-import Elektrik from "../gitar/Elektrik";
+import Akustik_Cort from "../gitar/Akustik_Cort_Abstract";
+import Elektrik_Gibson from "../gitar/Elektrik_Gibson";
+import Akustik_Gibson from "../gitar/Akustik_Gibson";
+import Akustik_Yamaha from "../gitar/Akustik_Yamaha";
 import { OrbitControls, Stage } from "@react-three/drei";
 import Info from "../detail/Info";
 import ImportGambar from "./ImportGambar";
 import Material from "./Material";
 import Export from "./Export";
+import Elektrik_Cort from "../gitar/Elektrik_Cort";
+import Elektrik_Ibanez from "../gitar/Elektrik_Ibanez";
 
 const TipeGitar = () => {
   const [selectedModel, setSelectedModel] = useState(null);
@@ -20,8 +24,18 @@ const TipeGitar = () => {
       <Info selectedGuitar={selectedGuitarName} />
       <Canvas gl={{ preserveDrawingBuffer: true }} className="canvas">
         <Stage environment={"city"} intensity={1} shadows={false}>
-          {selectedModel === ".public/Akustik.glb" && <Akustik />}
-          {selectedModel === ".public/Elektrik.glb" && <Elektrik />}
+          {selectedModel === ".public/Akustik_Cort_Abstract.glb" && (
+            <Akustik_Cort />
+          )}
+          {selectedModel === ".public/Akustik_Gibson.glb" && <Akustik_Gibson />}
+          {selectedModel === ".public/Akustik_Yamaha.glb" && <Akustik_Yamaha />}
+          {selectedModel === ".public/Elektrik.glb" && <Elektrik_Gibson />}
+          {selectedModel === ".public/Cort_G300_Elektrik.glb" && (
+            <Elektrik_Cort />
+          )}
+          {selectedModel === ".public/Elektrik_Ibanez.glb" && (
+            <Elektrik_Ibanez />
+          )}
           <OrbitControls />
           {selectedModel !== null && <Export />}
         </Stage>
@@ -34,19 +48,56 @@ const TipeGitar = () => {
       <div className="box">
         <div className="configurator-type">
           <h3>Pilih Tipe Gitar</h3>
-          <button
-            onClick={() =>
-              clicked(".public/Akustik.glb", "CORT ABSTRACT DELTA")
-            }
-            className="select-type"
-          >
-            Akustik
-          </button>
+          <div className="guitar-type-akustik">Akustik</div>
+          <div className="guitar-akustik">
+            <button
+              onClick={() =>
+                clicked(
+                  ".public/Akustik_Cort_Abstract.glb",
+                  "CORT ABSTRACT DELTA"
+                )
+              }
+              className="select-type"
+            >
+              Cort
+            </button>
+            <button
+              onClick={() =>
+                clicked(".public/Akustik_Gibson.glb", "GIBSON L-00 ORIGINAL")
+              }
+              className="select-type"
+            >
+              Gibson
+            </button>
+            <button
+              onClick={() => clicked(".public/Akustik_Yamaha.glb", "YAMAHA FG")}
+              className="select-type"
+            >
+              Yamaha
+            </button>
+          </div>
+          <div className="guitar-type-elektrik"> Elektrik</div>
           <button
             onClick={() => clicked(".public/Elektrik.glb", "GIBSON LES PAUL")}
             className="select-type"
           >
-            Elektrik
+            Gibson
+          </button>
+          <button
+            onClick={() =>
+              clicked(".public/Cort_G300_Elektrik.glb", "CORT G300")
+            }
+            className="select-type"
+          >
+            Cort
+          </button>
+          <button
+            onClick={() =>
+              clicked(".public/Elektrik_Ibanez.glb", "IBANEZ AZES 40")
+            }
+            className="select-type"
+          >
+            Ibanez
           </button>
         </div>
         {selectedModel !== null && (

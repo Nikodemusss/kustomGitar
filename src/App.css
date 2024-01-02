@@ -112,11 +112,12 @@ body {
 }
 
 .configurator-type {
+  overflow: hidden;
+  position: fixed;
   font-family: "Roboto", sans-serif;
-  /* box-shadow: 3px 3px #a8a6a6; */
   border: solid rgb(178, 174, 174);
-  padding: 5px;
-  right: 1235px;
+  padding: 10px;
+  margin-left: 12px;
   width: 250px;
   height: 100px;
   border-color: solid black;
@@ -133,8 +134,29 @@ body {
 }
 
 .configurator-type:hover {
+  overflow-y: scroll;
   background-color: #181c20;
+  height: 200px;
+  width: 400px;
+  /* bottom: 150px; */
+  overflow-y: scroll;
   transition: 1s;
+  z-index: 2;
+}
+
+.guitar-type-akustik {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.guitar-type-elektrik {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
 }
 
 .select-type {
